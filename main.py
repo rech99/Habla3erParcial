@@ -35,8 +35,15 @@ def respond(voice_data):
         url = 'https://google.nl/maps/place/' + lugar + '/&amp;'
         webbrowser.get().open(url)
         print ('Esto es lo que encontre sobre:' + lugar)
+    if 'movie' in voice_data:
+        buscar = record_audio('¿Que pelicual quieres buscar?')
+        url = 'https://google.com/search?q=' + buscar
+        webbrowser.get().open(url)
+    if 'actor' in voice_data:
+        buscar = record_audio('¿Que actor quieres buscar?')
+        url = 'https://google.com/search?q=' + buscar
+        webbrowser.get().open(url)
 
-         
 time.sleep(1)
 print ('¿Como te puedo ayudar?')
 voice_data = record_audio()
